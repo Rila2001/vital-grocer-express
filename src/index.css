@@ -2,95 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Grocery E-commerce Design System - Fresh & Organic Theme */
 
 @layer base {
   :root {
+    /* Base colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 20% 15%;
 
+    /* Brand colors - Fresh Green Palette */
+    --primary: 142 76% 36%;        /* Fresh green */
+    --primary-light: 142 65% 45%;   /* Lighter green */
+    --primary-dark: 142 85% 25%;    /* Darker green */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary colors */
+    --secondary: 120 15% 95%;       /* Light green-gray */
+    --secondary-foreground: 210 20% 25%;
+
+    /* Accent colors */
+    --accent: 35 95% 55%;           /* Orange for deals/CTA */
+    --accent-light: 35 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    /* UI colors */
+    --muted: 142 15% 96%;
+    --muted-foreground: 210 15% 55%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 20% 15%;
+    --border: 142 20% 90%;
+    --input: 142 15% 94%;
+    --ring: 142 76% 36%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Shadows */
+    --shadow-card: 0 2px 12px hsla(var(--primary), 0.08);
+    --shadow-hover: 0 8px 30px hsla(var(--primary), 0.15);
+    --shadow-accent: 0 4px 20px hsla(var(--accent), 0.25);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Typography */
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 210 20% 8%;
+    --foreground: 210 15% 95%;
+    --primary: 142 65% 45%;
+    --primary-foreground: 210 20% 8%;
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 210 15% 85%;
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 15% 65%;
+    --accent: 35 95% 55%;
+    --accent-foreground: 210 20% 8%;
+    --card: 210 20% 10%;
+    --card-foreground: 210 15% 95%;
+    --border: 210 20% 18%;
+    --input: 210 20% 15%;
   }
 }
 
@@ -100,6 +82,94 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground;
+    @apply hover:shadow-[0_8px_30px_hsla(var(--primary),0.25)] hover:scale-[1.02];
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground;
+    @apply hover:shadow-[0_8px_30px_hsla(var(--accent),0.3)] hover:scale-[1.02];
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Card styles */
+  .card-product {
+    @apply bg-card border border-border rounded-lg;
+    @apply shadow-[0_2px_12px_hsla(var(--primary),0.08)];
+    @apply hover:shadow-[0_8px_30px_hsla(var(--primary),0.15)] hover:-translate-y-1;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-category {
+    @apply bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20;
+    @apply hover:from-primary/10 hover:to-primary/20 hover:scale-[1.02];
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Hero section */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Utility classes for grocery theme */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light))) 1;
   }
 }
